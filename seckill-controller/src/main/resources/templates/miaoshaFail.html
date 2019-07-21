@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>秒杀失败</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <!-- jquery -->
+    <script th:src="@{/js/jquery.min.js}" type="text/javascript"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}" type="text/javascript"></script>
+    <!-- jquery-validator -->
+    <script th:src="@{/jquery-validation/jquery.validate.min.js}" type="text/javascript"></script>
+    <script th:src="@{/jquery-validation/localization/messages_zh.min.js}" type="text/javascript"></script>
+    <!-- layer -->
+    <script th:src="@{/layer/layer.js}" type="text/javascript"></script>
+    <!-- md5.js -->
+    <script th:src="@{/js/md5.min.js}" type="text/javascript"></script>
+    <!-- common.js -->
+    <script th:src="@{/js/common.js}" type="text/javascript"></script>
+</head>
+<body>
+<p th:text="'秒杀失败:'+${miaoshaFail}"></p>
+</body>
+</html>

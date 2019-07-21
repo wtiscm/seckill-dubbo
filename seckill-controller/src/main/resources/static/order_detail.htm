@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>订单详情</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <!-- jquery -->
+    <script src="/js/jquery.min.js" type="text/javascript"></script>
+    <!-- bootstrap -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- jquery-validator -->
+    <script src="/jquery-validation/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="/jquery-validation/localization/messages_zh.min.js" type="text/javascript"></script>
+    <!-- layer -->
+    <script src="/layer/layer.js" type="text/javascript"></script>
+    <!-- md5.js -->
+    <script src="/js/md5.min.js" type="text/javascript"></script>
+    <!-- common.js -->
+    <script src="/js/common.js" type="text/javascript"></script>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background: url('/img/bg2.jpg') no-repeat;
+            background-size: 100% 100%;
+        }
+
+        #goodslist td {
+            border-top: 1px solid #39503f61;
+        }
+    </style>
+</head>
+<body>
+<div class="panel panel-default" style="height:100%;background-color:rgba(222,222,222,0.8)">
+    <div class="panel-heading">秒杀订单详情</div>
+    <table class="table" id="goodslist">
+        <tr>
+            <td>商品名称</td>
+            <td colspan="3" id="goodsName"></td>
+        </tr>
+        <tr>
+            <td>商品图片</td>
+            <td colspan="2"><img height="200" id="goodsImg" width="200"/></td>
+        </tr>
+        <tr>
+            <td>订单价格</td>
+            <td colspan="2" id="orderPrice"></td>
+        </tr>
+        <tr>
+            <td>下单时间</td>
+            <td colspan="2" id="createDate"></td>
+        </tr>
+        <tr>
+            <td>订单状态</td>
+            <td id="orderStatus">
+            </td>
+            <td>
+                <button class="btn btn-primary btn-block" id="payButton" type="submit">立即支付</button>
+            </td>
+        </tr>
+        <tr>
+            <td>收货人</td>
+            <td colspan="2">XXX 18812341234</td>
+        </tr>
+        <tr>
+            <td>收货地址</td>
+            <td colspan="2">北京市昌平区回龙观龙博一区</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
+<script>
+    function render(detail) {
+        var goods = detail.goodsVo;
+        var order = detail.order;
+        $("#goodsName").text(goods.goodsName);
+        $("#goodsImg").attr("src", goods.goodsImg);
+        $("#orderPrice").text(order.goodsPrice);
+        $("#createDate").text(new Date(order.createDate).format("yyyy-MM-dd hh:mm:ss"));
+        var status = "";
+        if (order.status == 0) {
+            status = "未支付"
+        } else if (order.status == 1) {
+            status = "待发货";
+        }
+        $("#orderStatus").text(status);
+
+    }
+
+    $(function () {
+        getOrderDetail();
+    });
+
+    function getOrderDetail() {
+        var orderId = g_getQueryString("orderId");
+        $.ajax({
+            url: "/order/detail",
+            type: "GET",
+            data: {
+                orderId: orderId
+            },
+            success: function (data) {
+                if (data.code == 0) {
+                    render(data.data);
+                } else {
+                    layer.msg(data.msg);
+                }
+            },
+            error: function () {
+                layer.msg("客户端请求有误");
+            }
+        });
+    }
+
+
+</script>
