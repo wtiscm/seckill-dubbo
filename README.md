@@ -61,7 +61,7 @@
 
 **注意事项：**
 
-- 需要对数据库填充初始数据。
+- 需要对数据库填充初始数据  <https://github.com/wtiscm/seckill-dubbo/MySQL.mql> 。
 
 - 配置Redis。
 
