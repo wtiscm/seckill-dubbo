@@ -7,44 +7,44 @@
 
 -------------------------------------------------------------------
 
-##下载安装包、解压
+**下载安装包、解压**
 
 tar -zxvf zookeeper-3.4.5.tar.gz
 mv zookeeper-3.4.5 zookeeper 
 
 -------------------------------------------------------------------
 
-##修改Zookeeper配置文件
+**修改Zookeeper配置文件**
 
 cd zookeeper/conf
 cp zoo_sample.cfg zoo.cfg
 vi zoo.cfg
-添加内容：
+- 添加内容：
 dataDir=/root/apps/zookeeper/zkdata
 server.1=mini1:2888:3888     ## (心跳端口、选举端口)
 server.2=mini2:2888:3888
 server.3=mini3:2888:3888
-创建文件夹：
+- 创建文件夹：
 cd /home/hadoop/zookeeper/
 mkdir zkdata
-在data文件夹下新建myid文件，myid的文件内容为：
+- 在data文件夹下新建myid文件，myid的文件内容为：
 cd zkdata
 echo 1 > myid 
 
 -------------------------------------------------------------------
-##分发安装包到其他机器 
+**分发安装包到其他机器** 
 scp -r /root/apps root@mini2:/root/
 scp -r /root/apps root@mini3:/root/
 
 -------------------------------------------------------------------
 
-##修改其他机器的配置文件
+**修改其他机器的配置文件**
 修改myid文件
 到mini2上：修改myid为：2
 到mini3上：修改myid为：3
 
 -------------------------------------------------------------------
-##启动（每台机器）
+**启动（每台机器）**
 zkServer.sh start
 或者编写一个脚本来批量启动所有机器：
 for host in "mini1 mini2 mini3"
@@ -52,14 +52,14 @@ do
 ssh $host "source/etc/profile;/root/apps/zookeeper/bin/zkServer.sh start"
 
 -------------------------------------------------------------------
-##查看集群状态
+**查看集群状态**
 jps（查看进程）
 zkServer.sh status（查看集群状态，主从信息）
 
 如果启动不成功，可以观察zookeeper.out日志，查看错误信息进行排查
 
 -------------------------------------------------------------
-配置文件中参数说明:
+**配置文件中参数说明:**
 
 tickTime这个时间是作为zookeeper服务器之间或客户端与服务器之间维持心跳的时间间隔,也就是说每个tickTime时间就会发送一个心跳。
 
