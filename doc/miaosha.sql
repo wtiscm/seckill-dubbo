@@ -2,7 +2,7 @@
 #
 #   秒杀用户表        miaosha_user
 #   商品表            goods
-#   秒杀商品表   miaosha_goods
+#   秒杀商品表        miaosha_goods
 #   秒杀订单表        seckill_order
 #   订单表            order_info
 #
