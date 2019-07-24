@@ -52,9 +52,11 @@
 
 - 需要对[数据库填充初始数据](https://github.com/wtiscm/seckill-dubbo/blob/master/doc/miaosha.sql) 。
 
-- 配置Redis。
+- [配置Zookeeper](https://github.com/wtiscm/seckill-dubbo/blob/master/doc/Zookeeper.md)。
 
-- 配置Zookeeper。
+- [配置Redis](https://github.com/wtiscm/seckill-dubbo/blob/master/doc/Redis.md)。
+
+- [配置Zookeeper](https://github.com/wtiscm/seckill-dubbo/blob/master/doc/RabbitMQ.md)。
 
 **项目启动过程：**
 
