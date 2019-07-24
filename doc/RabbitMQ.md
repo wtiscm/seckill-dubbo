@@ -34,7 +34,7 @@ http://www.rabbitmq.com/access-control.html
   - 启用管理控制台  
 ./sbin/rabbitmq-plugins enable rabbitmq_management  
 重启rabbitmq  
-打开浏览器输入： http://127.0.0.1:15672/，用户名guest，密码guest  
+打开浏览器输入： http://127.0.0.1:15672/， 用户名guest，密码guest  
 Topic：*1个单词，#0个或者多个单词。
 
 **pom.xml:**  
