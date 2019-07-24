@@ -56,7 +56,7 @@
 
 - [配置Redis](https://github.com/wtiscm/seckill-dubbo/blob/master/doc/Redis.md)。
 
-- [配置Zookeeper](https://github.com/wtiscm/seckill-dubbo/blob/master/doc/RabbitMQ.md)。
+- [配置RabbitMQ](https://github.com/wtiscm/seckill-dubbo/blob/master/doc/RabbitMQ.md)。
 
 **项目启动过程：**
 
