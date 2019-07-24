@@ -50,7 +50,7 @@
 
 **注意事项：**
 
-- 需要对[数据库填充初始数据](https://github.com/wtiscm/seckill-dubbo/blob/master/MySQL.sql) 。
+- 需要对[数据库填充初始数据](https://github.com/wtiscm/seckill-dubbo/blob/master/doc/MySQL.sql) 。
 
 - 配置Redis。
 
