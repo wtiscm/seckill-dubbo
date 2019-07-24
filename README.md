@@ -17,7 +17,7 @@
 本项目是基于Dubbo的分布式秒杀项目。
 
 **项目特性：** 
-- 系统的并发量会非常的大，系统要在短短的几秒内完成非常大的访问处理。 
+- 秒杀的时候系统的并发量会非常的大，系统要在短短的几秒内完成非常大的访问处理。 
 
 - 并发量大的同时，网络的流量也会瞬间变的很大。 
 
@@ -48,17 +48,6 @@
 
 - 秒杀过程中，需要保证可用性，所以需要对Nignx进行水平扩展，双机热备份；服务提供方也需要按照实际情况水平扩展。
 
-
-
-**项目启动过程：**
-
-- 启动MySQL,Redis,Zookeeper,RabbitMQ。
-- 需要启动6个服务，注册的Zookeeper注册中心。分别启动 seckill-cache,seckill-goods,seckill-user,seckill-miaosha,seckill-mq,seckill-order 6个
-  提供方服务;然后启动seckill-controller 服务消费方。 或者把对应的服务提供方，与服务消费方达成jar包，以jar包的形式启动。
-
-- http://localhost:8091/seckill/to_login 进行登陆。
-
-
 **注意事项：**
 
 - 需要对[数据库填充初始数据](https://github.com/wtiscm/seckill-dubbo/blob/master/MySQL.sql) 。
@@ -66,6 +55,15 @@
 - 配置Redis。
 
 - 配置Zookeeper。
+
+**项目启动过程：**
+
+- 启动MySQL,Redis,Zookeeper,RabbitMQ。
+- 需要启动6个服务，注册的Zookeeper注册中心。如果使用IDEA，分别启动 seckill-cache,seckill-goods,seckill-user,seckill-miaosha,seckill-mq,seckill-order 6个
+  提供方服务;然后启动seckill-controller 服务消费方。 或者把对应的服务提供方，与服务消费方打成jar包，以jar包的形式启动。
+
+- http://localhost:8091/seckill/to_login 进行登陆。
+
 
 **引用：**
 >  <http://dubbo.apache.org/en-us/index.html>  
