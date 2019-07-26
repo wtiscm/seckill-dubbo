@@ -66,7 +66,7 @@
 - 需要启动6个服务，注册的Zookeeper注册中心。如果使用IDEA，分别启动 seckill-cache,seckill-goods,seckill-user,seckill-miaosha,seckill-mq,seckill-order 6个
   提供方服务;然后启动seckill-controller 服务消费方。 或者把对应的服务提供方，与服务消费方打成jar包，以jar包的形式启动。
 
-- http://localhost:8091/seckill/to_login 进行登陆。
+- http://localhost:8091/seckill/to_login  用户名：13512341234，密码：123456，进行登陆。
 
 
 **引用：**
