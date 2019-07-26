@@ -77,4 +77,5 @@
 >  <http://nginx.org/en/docs/>  
 >  <https://redis.io/>  
 >  <https://coding.imooc.com/class/168.html>  
+>  <https://blog.csdn.net/jokeMqc/article/details/87933573>  
 >  <https://www.rabbitmq.com/>  
