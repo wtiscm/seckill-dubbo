@@ -16,6 +16,8 @@
 
 本项目是基于Dubbo的分布式秒杀项目。
 
+![image](https://github.com/wtiscm/seckill-dubbo/blob/master/doc/demo.gif)
+
 **项目特性：** 
 - 秒杀的时候系统的并发量会非常的大，系统要在短短的几秒内完成非常大的访问处理。 
 
